@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.RankingsActivity"
+    android:background="@drawable/my_profile_screen"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="@android:color/transparent"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/rankings_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+            </androidx.appcompat.widget.Toolbar>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="0.18"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:background="@drawable/card_rank"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/my_rankings_logo"/>
+
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_weight="0.07"
+        android:layout_marginTop="5dp"
+        android:id="@+id/radio_group"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:layout_height="0dp">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:text="All"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/radio_button_all"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:text="Friends"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/radio_button_friends"
+            android:layout_height="wrap_content"
+            />
+    </RadioGroup>
+
+
+    <ListView
+        android:id="@+id/rankings_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="0.55"
+        android:dividerHeight="5dp"
+        android:divider="@drawable/list_view_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.08"
+        android:orientation="horizontal"
+        android:background="@drawable/custom_border"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/your_current_rank"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/your_curent_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>

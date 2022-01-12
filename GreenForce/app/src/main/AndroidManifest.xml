@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="rs.elfak.mosis.greenforce">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-feature android:name="android.hardware.bluetooth" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.CompletedEventsActivity"></activity>
+        <activity android:name=".activities.LikeDislikeEvent" />
+        <activity android:name=".activities.EnableCustomServicesActivity" />
+        <activity
+            android:name=".activities.CurrentEventsActivity"
+            android:label="@string/title_activity_current_events"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.EventsMapActivity"
+            android:label="@string/title_activity_events_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.MarkASpotActivity" />
+        <activity android:name=".activities.RankingsActivity" />
+        <activity android:name=".activities.AddFriendsViaMapsActivity" />
+        <activity
+            android:name=".activities.AddFriendsViaBluetoothActivity"
+            android:label="@string/title_activity_add_friends_via_bluetooth"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.MyFriendsActivity"
+            android:label="@string/title_activity_my_friends"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.MyProfileActivity" />
+        <activity android:name=".activities.HomePageActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.EventActivity" />
+        <activity android:name=".activities.NotificationsActivity" />
+        <activity android:name=".activities.UploadPhotoActivity" />
+        <activity android:name=".activities.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.MainActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/maps_api_key" />
+
+        <service
+            android:name=".services.LocationService"
+            android:stopWithTask="true" />
+    </application>
+
+</manifest>
